@@ -101,7 +101,11 @@ def process_jsonl_file(input_path: str, output_path: str, embedding_model: str =
                         'text': entity_text
                     })
 
-                for i, relation_text in enumerate(data['embedding_texts']['relation_embedding_texts']):
+                contexts = [(r.get('context') or '').strip() for r in data['extraction_result']['relations']]
+                data['embedding_texts']['relation_embedding_texts'] = contexts
+                for i, relation_text in enumerate(contexts):
+                    if not relation_text:
+                        continue
                     all_texts.append(relation_text)
                     text_metadata.append({
                         'doc_id': doc_id,
@@ -158,6 +162,7 @@ def process_jsonl_file(input_path: str, output_path: str, embedding_model: str =
         for meta in relation_metas:
             if embeddings[meta['index']]:
                 doc_result['embeddings']['relation_embeddings'].append({
+                    'relation_index': meta['relation_index'],
                     'text': meta['text'],
                     'embedding': embeddings[meta['index']]
                 })

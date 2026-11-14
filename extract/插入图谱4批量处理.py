@@ -413,6 +413,15 @@ def match_relation_with_embedding_advanced(extraction_relations, embedding_relat
     if not embedding_relations:
         return matched_embeddings
 
+    if all('relation_index' in item for item in embedding_relations):
+        for item in embedding_relations:
+            idx = item['relation_index']
+            if 0 <= idx < len(extraction_relations):
+                context = (extraction_relations[idx].get('context') or '').strip()
+                if context and context == item['text']:
+                    matched_embeddings[idx] = item['embedding']
+        return matched_embeddings
+
     # 创建embedding文本到向量的映射
     text_to_embedding = {}
     for item in embedding_relations:

@@ -178,20 +178,7 @@ class EntityRelationExtractor:
             entity_embedding_texts.append(entity_embedding)
 
         # 3. 关系节点的embedding文本列表
-        relation_embedding_texts = []
-        for relation in extraction_result.get("relations", []):
-            subject = relation.get("subject", "")
-            predicate = relation.get("predicate", "")
-            obj = relation.get("object", "")
-            context = relation.get("context", "")
-
-            if subject and predicate and obj:
-                if context:
-                    relation_embedding = f"{subject} {predicate} {obj} ({context})"
-                else:
-                    relation_embedding = f"{subject} {predicate} {obj}"
-
-                relation_embedding_texts.append(relation_embedding)
+        relation_embedding_texts = [(r.get('context') or '').strip() for r in extraction_result.get('relations', [])]
 
         return {
             "document_embedding_text": document_embedding_text,
