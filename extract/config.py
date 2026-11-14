@@ -1,0 +1,45 @@
+"""抽取、向量化和图谱导入配置。"""
+import os
+
+EXTRACT_API_KEY = os.getenv("EXTRACT_API_KEY", "")
+EXTRACT_BASE_URL = 'https://api.gptsapi.net/v1'
+EXTRACT_MODEL = 'gpt-4o'
+EXTRACT_DATASET_PATH = 'C:\\Users\\ASUS\\Desktop\\期刊\\抽取\\random_samples\\combined_contexts.jsonl'
+EXTRACT_OUTPUT_FILE = 'C:\\Users\\ASUS\\Desktop\\期刊\\抽取\\extraction_results.jsonl'
+EXTRACT_START_ITEM = 742
+EXTRACT_END_ITEM = 743
+EXTRACT_DEFAULT_START_ITEM = 1
+EXTRACT_DEFAULT_END_ITEM = None
+EXTRACT_TEMPERATURE = 0.1
+NEO4J_URI = 'neo4j://localhost:7687'
+NEO4J_USERNAME = '请填写你自己的账号密码'
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "")
+EMBED_MODEL = 'text-embedding-3-large'
+VECTOR_DIMENSIONS = 1536
+EMBED_DEFAULT_BATCH_SIZE = 500
+EMBED_INPUT_FILE = 'C:\\Users\\ASUS\\Desktop\\期刊\\抽取\\extraction_results.jsonl'
+EMBED_OUTPUT_FILE = 'C:\\Users\\ASUS\\Desktop\\期刊\\抽取\\embeddings_results.json'
+EMBED_API_KEY = os.getenv("EMBED_API_KEY", "")
+EMBED_BASE_URL = 'https://api.gptsapi.net/v1'
+EMBED_DELAY_SECONDS = 3
+DATA_DIR = 'C:\\Users\\ASUS\\Desktop\\期刊\\抽取'
+SAMPLE_FOLDER = 'random_samples'
+SAMPLE_FILENAME = 'random_50_samples.jsonl'
+CONTEXT_FILENAME = 'combined_contexts.jsonl'
+IMPORT_EXTRACTION_FILE = 'extraction_results.jsonl'
+IMPORT_EMBEDDINGS_FILE = 'embeddings_results.jsonl'
+IMPORT_START_ITEM = 1
+IMPORT_END_ITEM = None
+IMPORT_BATCH_SIZE = 200
+IMPORT_DEFAULT_START_ITEM = 1
+IMPORT_DEFAULT_END_ITEM = None
+IMPORT_DEFAULT_DOC_BATCH_SIZE = 100
+NEO4J_BATCH_SIZE = 1000
+VECTOR_SIMILARITY = 'cosine'
+ENTITY_INDEX = 'entity_embeddings'
+DOCUMENT_INDEX = 'document_embeddings'
+RELATIONSHIP_INDEX = 'relationship_embeddings'
+SAMPLE_DEFAULT_SAMPLE_SIZE = 50
+HOTPOT_FOLDER = 'hotpotqa___hotpot_qa'
+HOTPOT_FILENAME = 'hotpot_validation.jsonl'
+SAMPLE_SAMPLE_SIZE = 100
