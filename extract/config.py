@@ -1,7 +1,6 @@
 """抽取、向量化和图谱导入配置。"""
-import os
 
-EXTRACT_API_KEY = os.getenv("EXTRACT_API_KEY", "")
+EXTRACT_API_KEY = '请填写你自己的账号密码'
 EXTRACT_BASE_URL = 'https://api.gptsapi.net/v1'
 EXTRACT_MODEL = 'gpt-4o'
 EXTRACT_DATASET_PATH = 'C:\\Users\\ASUS\\Desktop\\期刊\\抽取\\random_samples\\combined_contexts.jsonl'
@@ -13,13 +12,13 @@ EXTRACT_DEFAULT_END_ITEM = None
 EXTRACT_TEMPERATURE = 0.1
 NEO4J_URI = 'neo4j://localhost:7687'
 NEO4J_USERNAME = '请填写你自己的账号密码'
-NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "")
+NEO4J_PASSWORD = '请填写你自己的账号密码'
 EMBED_MODEL = 'text-embedding-3-large'
 VECTOR_DIMENSIONS = 1536
 EMBED_DEFAULT_BATCH_SIZE = 500
 EMBED_INPUT_FILE = 'C:\\Users\\ASUS\\Desktop\\期刊\\抽取\\extraction_results.jsonl'
 EMBED_OUTPUT_FILE = 'C:\\Users\\ASUS\\Desktop\\期刊\\抽取\\embeddings_results.json'
-EMBED_API_KEY = os.getenv("EMBED_API_KEY", "")
+EMBED_API_KEY = '请填写你自己的账号密码'
 EMBED_BASE_URL = 'https://api.gptsapi.net/v1'
 EMBED_DELAY_SECONDS = 3
 DATA_DIR = 'C:\\Users\\ASUS\\Desktop\\期刊\\抽取'

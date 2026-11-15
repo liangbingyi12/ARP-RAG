@@ -2,22 +2,22 @@
 import os
 
 # 主程序显式客户端与 SDK 环境变量原本使用不同配置。
-SDK_API_KEY = os.getenv("SDK_API_KEY", "")
+SDK_API_KEY = "请填写你自己的账号密码"
 SDK_BASE_URL = "https://api.gptsapi.net/v1"
-CHAT_API_KEY = os.getenv("CHAT_API_KEY", "")
+CHAT_API_KEY = "请填写你自己的账号密码"
 CHAT_BASE_URL = "https://api.deepseek.com"
 CHAT_MODEL = "deepseek-v4-pro"
 DEEPSEEK_THINKING = os.getenv("DEEPSEEK_THINKING", "disabled").strip().lower()
 DEEPSEEK_REASONING_EFFORT = os.getenv("DEEPSEEK_REASONING_EFFORT", "high")
 MAIN_NEO4J_URI = "bolt://localhost:7687"
 MAIN_NEO4J_USER = "请填写你自己的账号密码"
-MAIN_请填写你自己的账号密码 = os.getenv("MAIN_请填写你自己的账号密码", "")
+MAIN_请填写你自己的账号密码 = "请填写你自己的账号密码"
 LANGCHAIN_TRACING_V2 = "true"
-LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY", "")
+LANGCHAIN_API_KEY = "请填写你自己的账号密码"
 DASHSCOPE_EMBEDDING_MODEL = "text-embedding-v1"
-DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY", "")
+DASHSCOPE_API_KEY = "请填写你自己的账号密码"
 DASHSCOPE_API_BASE = "http://api.wlai.vip/v1"
-TAVILY_API_KEY = os.getenv("TAVILY_API_KEY", "")
+TAVILY_API_KEY = "请填写你自己的账号密码"
 TAVILY_MAX_RESULTS = 2
 START_LINE = 1
 END_LINE = 2  # 处理前50条
@@ -29,8 +29,8 @@ ERROR_FILE = r'图谱实验结果musique_deepseek-v4-pro/错误输出.xlsx'
 BFS_NEO4J_URI = "bolt://127.0.0.1:7687"
 VECTOR_NEO4J_URI = "neo4j://localhost:7687"
 RETRIEVAL_NEO4J_USERNAME = "请填写你自己的账号密码"
-RETRIEVAL_请填写你自己的账号密码 = os.getenv("RETRIEVAL_请填写你自己的账号密码", "")
-RETRIEVAL_OPENAI_API_KEY = os.getenv("RETRIEVAL_OPENAI_API_KEY", "")
+RETRIEVAL_请填写你自己的账号密码 = "请填写你自己的账号密码"
+RETRIEVAL_OPENAI_API_KEY = "请填写你自己的账号密码"
 RETRIEVAL_OPENAI_BASE_URL = "https://api.gptsapi.net/v1"
 RETRIEVAL_EMBEDDING_MODEL = "text-embedding-3-large"
 RETRIEVAL_EMBEDDING_DIMENSIONS = 1536
