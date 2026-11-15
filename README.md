@@ -41,6 +41,20 @@ python "./retrieve/langgraph_neo4j_匹配所有api.py"
 
 结果和错误记录分别写入 `OUTPUT_FILE` 和 `ERROR_FILE` 指定的位置。
 
-## 数据与凭据
+## 数据准备
 
-请在本地 data/ 目录准备三个数据集的 JSONL 文件：2wiki_dev_processed.jsonl、hotpot_validation.jsonl、musique_dev_processed.jsonl。数据文件单独准备。API 密钥和数据库密码从配置文件中 os.getenv 指定的同名环境变量读取。
+ARP-RAG 使用三个公开的多跳问答数据集。实验输入包含问题、参考答案和候选文本，候选文本用于构图，问题和参考答案用于问答评测。下表列出原始数据的获取入口和本项目使用的 JSONL 文件名。
+
+| 数据集 | 官方获取入口 | 项目输入路径 |
+| --- | --- | --- |
+| HotpotQA | [项目主页](https://hotpotqa.github.io/)，下载 distractor 设置的开发集 | `data/hotpot_validation.jsonl` |
+| 2WikiMultiHopQA | [官方仓库](https://github.com/Alab-NII/2wikimultihop)，下载数据包并取开发集 | `data/2wiki_dev_processed.jsonl` |
+| MuSiQue | [官方仓库](https://github.com/StonyBrookNLP/musique)，下载 MuSiQue-Ans 开发集 | `data/musique_dev_processed.jsonl` |
+
+仓库目前提供源码，实验用的三个 JSONL 文件单独准备。官方入口提供原始开发集；复现论文所用子集还需对齐评测问题 ID、候选文本和输入格式。[HopRAG 仓库](https://github.com/LIU-Hao-2002/HopRAG) 提供这三个数据集的示例和预处理代码，可用于了解数据组织方式。
+
+准备好实验输入后，在项目根目录创建 `data/`，按上表放置文件，并在构图与检索配置中指定相应输入路径。
+
+## 凭据
+
+API 密钥和数据库密码从配置文件中 `os.getenv` 指定的同名环境变量读取。
