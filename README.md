@@ -51,7 +51,7 @@ ARP-RAG 使用三个公开的多跳问答数据集。实验输入包含问题、
 | 2WikiMultiHopQA | [官方仓库](https://github.com/Alab-NII/2wikimultihop)，下载数据包并取开发集 | `data/2wiki_dev_processed.jsonl` |
 | MuSiQue | [官方仓库](https://github.com/StonyBrookNLP/musique)，下载 MuSiQue-Ans 开发集 | `data/musique_dev_processed.jsonl` |
 
-仓库目前提供源码，实验用的三个 JSONL 文件单独准备。官方入口提供原始开发集；复现论文所用子集还需对齐评测问题 ID、候选文本和输入格式。[HopRAG 仓库](https://github.com/LIU-Hao-2002/HopRAG) 提供这三个数据集的示例和预处理代码，可用于了解数据组织方式。
+仓库目前提供源码，实验用的三个 JSONL 文件单独准备。官方入口提供原始开发集。[HopRAG 仓库](https://github.com/LIU-Hao-2002/HopRAG) 提供这三个数据集的示例和预处理代码，可用于了解数据组织方式。
 
 准备好实验输入后，在项目根目录创建 `data/`，按上表放置文件，并在构图与检索配置中指定相应输入路径。
 
